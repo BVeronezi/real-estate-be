@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql
+    container_name: realestate-mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: realestate
+    volumes:
+      - realestate_data:/var/lib/mysql
+volumes:
+  realestate_data:
